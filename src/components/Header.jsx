@@ -48,7 +48,7 @@ export const Header = () => {
           </div>
         </Title>
         <ModeSwitcher
-          className='switch'
+          className={theme === 'light' ? 'switch' : 'switch_dark'}
           onClick={toggleTheme}>
           {theme === 'light' ? (
             <IoMoonOutline size="14px" />
