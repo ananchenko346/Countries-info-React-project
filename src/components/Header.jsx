@@ -36,57 +36,30 @@ export const Header = () => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
 
-  if (theme === 'light') {
-    return (
-      <HeaderEl className='light'>
-        <Container>
-          <Title>
-            <div className='logo_name'
-              style={{
-                color: 'hsl(200, 15%, 8%)'
-              }}>
-              Countries
-            </div>
-          </Title>
-          <ModeSwitcher
-            className='switch'
-            onClick={toggleTheme}>
-            {theme === 'light' ? (
-              <IoMoonOutline size="14px" />
-            ) : (
-              <IoMoon size="14px" />
-            )}{' '}
-            <span style={{ paddingLeft: '5px' }}>{theme}</span>
-          </ModeSwitcher>
-        </Container>
-      </HeaderEl>
-    );
-  } else if (theme === 'dark') {
-    return (
-      <HeaderEl className='dark'>
-        <Container>
-          <Title>
-            <div className='logo_name'
-              style={{
-                color: 'hsl(0, 0%, 100%)'
-              }}>
-              Countries
-            </div>
-          </Title>
-          <ModeSwitcher
-            className='switch_dark'
-            onClick={toggleTheme}>
-            {theme === 'light' ? (
-              <IoMoonOutline size="14px" />
-            ) : (
-              <IoMoon size="14px" />
-            )}{ }
-            <span style={{ paddingLeft: '5px' }}>{theme}</span>
-          </ModeSwitcher>
-        </Container>
-      </HeaderEl>
-    );
-  }
+  return (
+    <HeaderEl className={theme === 'light' ? 'light' : 'dark'}>
+      <Container>
+        <Title>
+          <div className='logo_name'
+            style={{
+              color: 'hsl(200, 15%, 8%)'
+            }}>
+            Countries
+          </div>
+        </Title>
+        <ModeSwitcher
+          className='switch'
+          onClick={toggleTheme}>
+          {theme === 'light' ? (
+            <IoMoonOutline size="14px" />
+          ) : (
+            <IoMoon size="14px" />
+          )}{' '}
+          <span style={{ paddingLeft: '5px' }}>{theme}</span>
+        </ModeSwitcher>
+      </Container>
+    </HeaderEl>
+  );
 };
 
 
